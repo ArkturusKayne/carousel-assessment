@@ -1,0 +1,18 @@
+{
+  "name": "carousel-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^2.17.1"
+  },
+  "dependencies": {
+    "@snowpack/plugin-optimize": "^0.2.9",
+    "@snowpack/plugin-sass": "^1.1.1"
+  }
+}

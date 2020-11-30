@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap');
+
+body {
+  background-color: #222222;
+  font-size: 16px;
+  font-family: 'Texturina', serif;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1, h2 {
+  color: #f3f4f5;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 2rem;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  background-color: #222222;
+  .slider {
+    position: relative;
+    max-width: 100vw;
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;
+      &.active {
+        left: 0;
+      }
+      &.prev {
+        left: -100%;
+      }
+      &.next {
+        left: 100%;
+      }
+      &:not(.active):not(.next):not(.prev) {
+        display: none;
+      }
+      img {
+        object-fit: contain;
+        object-position: center, center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .dot-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    height: 50px;
+    top: calc(100% - 50px);
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #aaaaaa;
+      border-radius: 5rem;
+      margin: 0rem 0.5rem;
+      transition: width 0.3s ease, height 0.3s ease;
+      &.active {
+        background-color: #ffffff;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  .prev-next-buttons {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .prev, .next {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      top: calc(50% - 50px);
+      cursor: pointer;
+    }
+    .inactive {
+      cursor: default;
+      opacity: 0.5;
+    }
+    .prev {
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-right: 30px solid white;
+      left: 20px;
+    }
+    .next {
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-left: 30px solid white;
+      right: 20px;
+    }
+  }
+  .autoplay-control {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    cursor: pointer;
+    &.pause {
+      background-image: url('../images/pause-circle-solid.svg');
+    }
+    &.play {
+      background-image: url('../images/play-circle-solid.svg');
+    }
+  }
+}
