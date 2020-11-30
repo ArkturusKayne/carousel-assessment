@@ -3,7 +3,10 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-  // mount: {},
+  mount: {
+    public: '/',
+    src: '/_dist_',
+  },
   plugins: [
     ["@snowpack/plugin-optimize"],
     ["@snowpack/plugin-sass"]
